@@ -52,8 +52,8 @@
     <dependencies>
       <dependency>
         <groupId>io.jenkins.tools.bom</groupId>
-        <artifactId>bom-2.440.x</artifactId>
-        <version> 3435.v238d66a_043fb_</version>
+        <artifactId>bom-${jenkins.baseline}.x</artifactId>
+        <version>3435.v238d66a_043fb_</version>
         <scope>import</scope>
         <type>pom</type>
       </dependency>
@@ -100,7 +100,9 @@
   </dependencies>
 
   <properties>
-    <jenkins.version>2.440.3</jenkins.version>
+    <!-- https://www.jenkins.io/doc/developer/plugin-development/choosing-jenkins-baseline/ -->
+    <jenkins.baseline>2.440</jenkins.baseline>
+    <jenkins.version>${jenkins.baseline}.3</jenkins.version>
     <!-- Need this due to commit message rules (default prefix start with non-alphanumeric char): -->
     <scmCommentPrefix>maven-release-plugin:</scmCommentPrefix>
   </properties>
